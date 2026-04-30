@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import "tailwindcss";
 @import "@heroui/styles";
+@plugin "daisyui";
 
 
 
@@ -20,4 +21,12 @@
   border-radius: 8px;
   font-weight: 700;
   color: #fff;
+}
+
+.card-bg {
+  background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.5));
+}
+
+.bg-1 {
+  background: linear-gradient(135deg, #1e1b4b, #312e81);
 }

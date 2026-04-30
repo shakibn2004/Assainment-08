@@ -18,9 +18,9 @@ const links = [
 ];
 const Navbar = () => {
     const pathname = usePathname();
-    
+
     return (
-        <div className='bg-black'>
+        <div className='bg-black sticky top-0'>
             <header className='flex justify-between max-w-360 w-[90%] mx-auto items-center py-4'>
                 <nav className={`nav-start font-black text-[1.35rem] ${syne.className}`}>
                     <span className='text-white'>Skill</span>

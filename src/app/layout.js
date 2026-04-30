@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`h-full antialiased dm-sans`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-black">
         {children}
       </body>
     </html>
