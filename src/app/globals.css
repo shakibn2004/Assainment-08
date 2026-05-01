@@ -15,6 +15,10 @@
   -webkit-text-fill-color: transparent;
 }
 
+.linear-bg {
+  background: linear-gradient(to right, #f97316, #fbbf24);
+}
+
 .btn-primary {
   background: #f97316;
   padding: 8px 16px;
@@ -50,6 +54,7 @@
 .link {
   color: #8a8799;
 }
+
 .link:hover {
   color: #f97316;
 }

@@ -14,7 +14,7 @@ const syne = Syne({
 const links = [
     { name: "Home", path: "/home" },
     { name: "Courses", path: "/home/courses" },
-    { name: "My Profile", path: "/home/profile" }
+    { name: "My Profile", path: "/profile" }
 ];
 const Navbar = () => {
     const pathname = usePathname();
