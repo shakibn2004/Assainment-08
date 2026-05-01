@@ -29,7 +29,7 @@ const Home = () => {
                         <button className='border border-[#8a8799]/50 text-[#8a8799] px-4 py-2 flex gap-2 items-center rounded-xl'>Watch Demo<FaPlay /></button>
                     </div>
 
-                    <div className={`${syne.className} ratting grid grid-cols-3 w-fit gap-4`}>
+                    <div className={`${syne.className} grid grid-cols-3 w-fit gap-4`}>
                         <div className="card">
                             <h3 className='text-3xl font-bold -mb-2'>12<span className='text-[#f97316]'>K+</span></h3>
                             <p className='text-[14px] text-[#8a8799]'>STUDENTS</p>

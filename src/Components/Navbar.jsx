@@ -20,7 +20,7 @@ const Navbar = () => {
     const pathname = usePathname();
 
     return (
-        <div className='bg-black sticky top-0'>
+        <div className='bg-black sticky top-0 z-10'>
             <header className='flex justify-between max-w-360 w-[90%] mx-auto items-center py-4'>
                 <nav className={`nav-start font-black text-[1.35rem] space-x-2 ${syne.className}`}>
                     <span className='text-white'>Skill</span>

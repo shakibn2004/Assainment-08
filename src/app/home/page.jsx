@@ -1,6 +1,7 @@
 import Home from '@/Components/Home';
 import LearningTips from '@/Components/LearningTips';
 import PopularCourses from '@/Components/PopularCourses';
+import TopInstructor from '@/Components/TopInstructor';
 import React from 'react';
 
 const MainPage = () => {
@@ -9,6 +10,7 @@ const MainPage = () => {
             <Home />
             <PopularCourses />
             <LearningTips />
+            <TopInstructor />
         </div>
     );
 };

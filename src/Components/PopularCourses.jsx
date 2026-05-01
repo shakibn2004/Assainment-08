@@ -26,13 +26,13 @@ const PopularCourses = async () => {
 
             <div className="middle flex justify-between text-[#8a8799]">
                 <p>Handpicked by our team based on student ratings and <br /> outcomes.</p>
-                <Link href={'/'} className="flex gap-2 items-center mt-10  btn-secondary">View All<FaArrowRightLong /></Link>
+                <Link href={'/home/courses'} className="flex gap-2 items-center mt-10  btn-secondary">View All<FaArrowRightLong /></Link>
             </div>
 
 
             <div className="cards grid grid-cols-4 gap-4">
                 {
-                    coursesSlice.map(course => {
+                    coursesSlice.map((course, idx) => {
                         const {id, rating, duration, title, instructor, category, level, image} = course;
 
                         return (
@@ -51,13 +51,13 @@ const PopularCourses = async () => {
                                     <div className="ratting flex justify-between">
                                         <h5 className="flex items-center text-[#fbbf24] text-[14px]">
                                             {
-                                                [<FaStar key={1} />, <FaStar key={2} />, <FaStar key={3} />, <FaStar key={id} />, <FaStarHalfAlt key={title} />].map(icon => icon)
+                                                [<FaStar key={idx} />, <FaStar key={title} />, <FaStar key={instructor} />, <FaStar key={duration} />, <FaStarHalfAlt key={rating} />].map(icon => icon)
                                             }
                                             <span className="ml-1 font-bold text-white text-[18px]">{rating}</span>
                                         </h5>
                                         <p className="flex items-center text-[#8a8799]"><MdOutlineTimer />{duration}</p>
                                     </div>
-                                    <Link href={'/home/courses/coursedetails'} className="text-[#f97316] border border-[#f97316]/80 flex items-center gap-1.5 justify-center py-2 rounded-xl w-full">View Details<FaArrowRightLong /></Link>
+                                    <Link href={`/home/courses/coursedetails-${id}`} className="text-[#f97316] border border-[#f97316]/80 flex items-center gap-1.5 justify-center py-2 rounded-xl w-full">View Details<FaArrowRightLong /></Link>
                                 </div>
                             </div>
                         )
