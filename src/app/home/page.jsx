@@ -7,10 +7,10 @@ import React from 'react';
 const MainPage = () => {
     return (
         <div>
-            <Home />
+            {/* <Home />
             <PopularCourses />
             <LearningTips />
-            <TopInstructor />
+            <TopInstructor /> */}
         </div>
     );
 };
