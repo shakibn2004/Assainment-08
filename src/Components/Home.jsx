@@ -1,5 +1,3 @@
-'use client'
-import { toast, Toast } from '@heroui/react';
 import { Syne } from 'next/font/google';
 import React from 'react';
 import { FaPlay } from "react-icons/fa";
@@ -11,10 +9,8 @@ const syne = Syne({
 })
 
 const Home = () => {
-    toast.success("Sign in succesfull!")
     return (
         <section>
-            <Toast.Provider />
             <section className='w-[90%] max-w-360 mx-auto flex gap-4 justify-between items-center text-white py-20' >
                 <div className="hero-start space-y-10">
                     <div className="batch uppercase border border-[#f97316]/50 w-fit px-4 py-2 rounded-full">
