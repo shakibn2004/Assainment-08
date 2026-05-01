@@ -39,10 +39,11 @@ const PopularCourses = async () => {
                         return (
                             <div key={id} className="rounded-2xl shadow-[0_0_2px_#fff]/40">
                                 <Image src={image} width={0} height={0} style={{width: '100%', height: '100%'}} alt={id} className="bg-amber-300/30 h-40 rounded-t-2xl">
-                                    <div className="cbadge p-4">
+                                    {/* <div className="cbadge p-4">
                                         <h1 className="text-[#4ade80] text-[14px] rounded-[4px] border border-[#4ade80]/40 px-3 py-1 bg-[#4ade80]/20 w-fit uppercase">{level}</h1>
-                                    </div>
+                                    </div> */}
                                 </Image>
+                                
 
                                 <div className="content mt-4 space-y-3 px-4">
                                     <h3 className="text-[#f97316]">{category}</h3>
