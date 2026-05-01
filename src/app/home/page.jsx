@@ -1,3 +1,4 @@
+'use client'
 import Home from '@/Components/Home';
 import LearningTips from '@/Components/LearningTips';
 import PopularCourses from '@/Components/PopularCourses';
