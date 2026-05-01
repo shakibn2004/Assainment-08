@@ -24,7 +24,7 @@
 }
 
 .btn-secondary {
-  border: 1px solid #8a87997f;
+  border: 1px solid #8a87991f;
   padding: 8px 16px;
   border-radius: 8px;
   font-weight: 500;
@@ -32,7 +32,7 @@
 }
 
 .btn-secondary:hover {
-  border: 1px solid #8a8799;
+  border: 1px solid #8a87997f;
   padding: 8px 16px;
   border-radius: 8px;
   font-weight: 500;

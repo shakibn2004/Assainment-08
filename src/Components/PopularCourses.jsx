@@ -17,10 +17,9 @@ const PopularCourses = async () => {
     const courses = await coursesPromised.json();
     const coursesSort = courses.sort((a, b) => b.rating-a.rating);
     const coursesSlice = coursesSort.slice(0, 3)
-    console.log(coursesSlice);
 
     return (
-        <div className='text-white w-[90%] max-w-360 mx-auto space-y-4'>
+        <section className='text-white w-[90%] max-w-360 mx-auto space-y-4'>
             <div className="top">
                 <h1 className={`${syne.className} text-5xl font-black`}>Popular Courses</h1>
             </div>
@@ -37,12 +36,12 @@ const PopularCourses = async () => {
                         const {id, rating, duration, title, instructor, category, level, image} = course;
 
                         return (
-                            <div key={id} className="rounded-2xl shadow-[0_0_2px_#fff]/40">
-                                <Image src={image} width={0} height={0} style={{width: '100%', height: '100%'}} alt={id} className="bg-amber-300/30 h-40 rounded-t-2xl">
-                                    {/* <div className="cbadge p-4">
-                                        <h1 className="text-[#4ade80] text-[14px] rounded-[4px] border border-[#4ade80]/40 px-3 py-1 bg-[#4ade80]/20 w-fit uppercase">{level}</h1>
-                                    </div> */}
-                                </Image>
+                            <div key={id} className="ccard hover:border hover:border-[#f97316]/60 pb-8 rounded-2xl shadow-[0_0_2px_#fff]/40">
+                                
+                                    <div className="cbadge relative">
+                                        <Image src={image} width={0} height={0} sizes="100vw" style={{width: '100%', height: '100%'}} alt={id} className="bg-amber-300/30 h-40 rounded-t-2xl"></Image>
+                                        <h1 className="text-white absolute -top-4 left-6 text-[14px] rounded-full px-3 py-1 bg-[#f97316] w-fit uppercase">{level}</h1>
+                                    </div>
                                 
 
                                 <div className="content mt-4 space-y-3 px-4">
@@ -52,7 +51,7 @@ const PopularCourses = async () => {
                                     <div className="ratting flex justify-between">
                                         <h5 className="flex items-center text-[#fbbf24] text-[14px]">
                                             {
-                                                [<FaStar key={id} />, <FaStar key={id} />, <FaStar key={id} />, <FaStar key={id} />, <FaStarHalfAlt key={title} />].map(icon => icon)
+                                                [<FaStar key={1} />, <FaStar key={2} />, <FaStar key={3} />, <FaStar key={id} />, <FaStarHalfAlt key={title} />].map(icon => icon)
                                             }
                                             <span className="ml-1 font-bold text-white text-[18px]">{rating}</span>
                                         </h5>
@@ -65,7 +64,7 @@ const PopularCourses = async () => {
                     })
                 }
             </div>
-        </div>
+        </section>
     );
 };
 
