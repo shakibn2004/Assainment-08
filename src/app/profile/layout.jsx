@@ -1,13 +1,12 @@
-'use client'
 import Footer from '@/Components/Footer';
 import Navbar from '@/Components/Navbar';
-import React, { Children } from 'react';
+import React from 'react';
 
-const layout = ({Children}) => {
+const layout = ({ children }) => {
     return (
         <div>
             <Navbar />
-            {Children}
+            {children}
             <Footer />
         </div>
     );

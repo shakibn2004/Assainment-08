@@ -1,17 +1,22 @@
 'use client'
+import { authClient } from '@/lib/auth-client';
 import { Button, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import Link from 'next/link';
 
 const SignUpPage = () => {
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        console.log(formData);
-        // Convert FormData to plain object
-        formData.forEach((value, key) => {
-            data[key] = value.toString();
+        const userData = Object.fromEntries(formData.entries());
+
+        const { data, error } = await authClient.signUp.email({
+            name: userData.name, // required
+            email: userData.email,
+            password: userData.password,
+            callbackURL: "/",
         });
-        alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
+
+        console.log(data, error);
     };
 
 
