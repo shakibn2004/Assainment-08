@@ -14,8 +14,18 @@ const syne = Syne({
 
 const PopularCourses = async () => {
 
-    const coursesPromised = await fetch('https://assainment-08.vercel.app/course.json');
-    const courses = await coursesPromised.json();
+    // const coursesPromised = await fetch('https://assainment-08.vercel.app/course.json');
+    // const courses = await coursesPromised.json();
+
+    let courses = [];
+    try {
+        const res = await fetch('https://assainment-08.vercel.app/course.json');
+        if (res.ok) {
+            courses = await res.json();
+        }
+    } catch (error) {
+        console.error("Fetch error:", error);
+    }
 
     return (
         <section className='text-white w-[90%] max-w-360 mx-auto space-y-4 py-20'>
