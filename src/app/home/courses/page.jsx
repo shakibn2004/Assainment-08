@@ -1,3 +1,4 @@
+
 import { Syne } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,11 +13,7 @@ const syne = Syne({
 })
 
 
-const PopularCourses = async () => {
-
-    // const coursesPromised = await fetch('https://assainment-08.vercel.app/course.json');
-    // const courses = await coursesPromised.json();
-
+const Course = async () => {
     let courses = [];
     try {
         const res = await fetch('https://assainment-08.vercel.app/course.json');
@@ -26,6 +23,7 @@ const PopularCourses = async () => {
     } catch (error) {
         console.error("Fetch error:", error);
     }
+
 
     return (
         <section className='text-white w-[90%] max-w-360 mx-auto space-y-4 py-20'>
@@ -37,8 +35,12 @@ const PopularCourses = async () => {
                 <p>Everything we offer — filter by search, explore by category.</p>
             </div>
 
+            <div className="search mt-6">
+                <input className="focus:outline-none border border-[#f97316]/70 py-2 px-3 rounded-xl" type="search" name="search" id="search" placeholder="Search course by title" />
+            </div>
 
-            <div className="cards grid grid-cols-4 gap-6 gap-y-20 mt-30">
+
+            <div className="cards grid grid-cols-4 gap-6 gap-y-15 mt-25">
                 {
                     courses.map((course, idx) => {
                         const { id, rating, duration, title, instructor, category, level, image } = course;
@@ -65,7 +67,7 @@ const PopularCourses = async () => {
                                         </h5>
                                         <p className="flex items-center text-[#8a8799]"><MdOutlineTimer />{duration}</p>
                                     </div>
-                                    <Link href={`/home/courses/coursedetails-${id}`} className="text-[#f97316] hover:text-[#f97316]/80 border border-[#f97316]/80 flex items-center gap-1.5 justify-center py-2 rounded-xl w-full">View Details<FaArrowRightLong /></Link>
+                                    <Link href={`/home/courses/${id}`} className="text-[#f97316] hover:text-[#f97316]/80 border border-[#f97316]/80 flex items-center gap-1.5 justify-center py-2 rounded-xl w-full">View Details<FaArrowRightLong /></Link>
                                 </div>
                             </div>
                         )
@@ -76,4 +78,4 @@ const PopularCourses = async () => {
     );
 };
 
-export default PopularCourses;
+export default Course;

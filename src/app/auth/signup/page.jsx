@@ -2,6 +2,7 @@
 import { authClient } from '@/lib/auth-client';
 import { Button, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import Link from 'next/link';
+import { FcGoogle } from "react-icons/fc";
 
 const SignUpPage = () => {
     const onSubmit = async (e) => {
@@ -13,11 +14,15 @@ const SignUpPage = () => {
             name: userData.name, // required
             email: userData.email,
             password: userData.password,
-            callbackURL: "/",
+            callbackURL: "/home",
         });
-
-        console.log(data, error);
     };
+
+    const handleGoogleSignin = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    }
 
 
     return (
@@ -81,6 +86,9 @@ const SignUpPage = () => {
                 <div className="">
                     <Button className="w-full linear-bg text-xl" type="submit">
                         Resister
+                    </Button>
+                    <Button onClick={handleGoogleSignin} className="w-full linear-bg text-xl mt-6" type="submit">
+                        <FcGoogle />Continue With Google
                     </Button>
                     <div className="text-[#8a8799] mt-4">
                         <span>Already have an account?</span>

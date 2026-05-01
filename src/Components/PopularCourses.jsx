@@ -57,7 +57,7 @@ const PopularCourses = async () => {
                                         </h5>
                                         <p className="flex items-center text-[#8a8799]"><MdOutlineTimer />{duration}</p>
                                     </div>
-                                    <Link href={`/home/courses/coursedetails-${id}`} className="text-[#f97316] border border-[#f97316]/80 flex items-center gap-1.5 justify-center py-2 rounded-xl w-full">View Details<FaArrowRightLong /></Link>
+                                    <Link href={`/home/courses/${id}`} className="text-[#f97316] border border-[#f97316]/80 flex items-center gap-1.5 justify-center py-2 rounded-xl w-full">View Details<FaArrowRightLong /></Link>
                                 </div>
                             </div>
                         )

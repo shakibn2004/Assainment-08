@@ -6,6 +6,7 @@
     "duration": "20 hours",
     "rating": 4.8,
     "level": "Beginner",
+    "price": 49.99,
     "description": "Learn full-stack web development from scratch.",
     "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
     "category": "Development"
@@ -17,6 +18,7 @@
     "duration": "18 hours",
     "rating": 4.7,
     "level": "Advanced",
+    "price": 59.99,
     "description": "Master React and Next.js with real-world projects.",
     "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500&h=300&fit=crop",
     "category": "Development"
@@ -28,6 +30,7 @@
     "duration": "12 hours",
     "rating": 4.6,
     "level": "Beginner",
+    "price": 39.99,
     "description": "Learn the basics of user interface and user experience design.",
     "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=500&h=300&fit=crop",
     "category": "Design"
@@ -39,6 +42,7 @@
     "duration": "22 hours",
     "rating": 4.9,
     "level": "Intermediate",
+    "price": 64.99,
     "description": "Analyze data and build models using Python.",
     "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
     "category": "Data Science"
@@ -50,6 +54,7 @@
     "duration": "15 hours",
     "rating": 4.5,
     "level": "Beginner",
+    "price": 44.99,
     "description": "Learn SEO, social media marketing, and ads.",
     "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
     "category": "Marketing"
@@ -61,6 +66,7 @@
     "duration": "25 hours",
     "rating": 4.8,
     "level": "Advanced",
+    "price": 69.99,
     "description": "Build machine learning models from scratch.",
     "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=300&fit=crop",
     "category": "Data Science"
@@ -72,6 +78,7 @@
     "duration": "17 hours",
     "rating": 4.6,
     "level": "Intermediate",
+    "price": 54.99,
     "description": "Create cross-platform mobile apps using Flutter.",
     "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop",
     "category": "Development"
@@ -83,6 +90,7 @@
     "duration": "10 hours",
     "rating": 4.4,
     "level": "Beginner",
+    "price": 34.99,
     "description": "Learn Photoshop, Illustrator, and design basics.",
     "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&h=300&fit=crop",
     "category": "Design"
@@ -94,6 +102,7 @@
     "duration": "14 hours",
     "rating": 4.7,
     "level": "Intermediate",
+    "price": 52.99,
     "description": "Understand security principles and ethical hacking.",
     "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop",
     "category": "Security"
@@ -105,6 +114,7 @@
     "duration": "16 hours",
     "rating": 4.6,
     "level": "Intermediate",
+    "price": 57.99,
     "description": "Build RESTful APIs using Node.js and Express.",
     "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500&h=300&fit=crop",
     "category": "Development"
@@ -116,6 +126,7 @@
     "duration": "13 hours",
     "rating": 4.5,
     "level": "Beginner",
+    "price": 41.99,
     "description": "Introduction to artificial intelligence concepts.",
     "image": "https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=500&h=300&fit=crop",
     "category": "AI"
@@ -127,6 +138,7 @@
     "duration": "19 hours",
     "rating": 4.7,
     "level": "Intermediate",
+    "price": 58.99,
     "description": "Learn to analyze business data for decision making.",
     "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
     "category": "Business"
