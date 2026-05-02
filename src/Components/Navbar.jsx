@@ -51,7 +51,7 @@ const Navbar = () => {
                     <div className="user flex gap-4 items-center">
                         {/* user image here */}
                         {user ? <h1 className={`linear-color font-bold ${syne.className}`}>Hello! {user.name}</h1> : ""}
-                        <Link href={'/profile'}>
+                        <Link href={'/profile'} className={`${user ? 'block' : 'hidden'}`}>
                             <div className='w-10 h-10 rounded-full border-2 border-[#f97316] overflow-hidden'>
                                 <Image src={'/boy.png'} width={0} height={0} sizes='100vw' style={{ width: '100%', height: '100%' }} alt='User Avatar' />
                             </div>
