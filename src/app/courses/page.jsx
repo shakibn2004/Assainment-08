@@ -16,7 +16,7 @@ const syne = Syne({
 const Course = async () => {
     let courses = [];
     try {
-        const res = await fetch('https://assainment-08.vercel.app/course.json');
+        const res = await fetch('https://data-fetching-sable-two.vercel.app/assainment-08.json');
         if (res.ok) {
             courses = await res.json();
         }

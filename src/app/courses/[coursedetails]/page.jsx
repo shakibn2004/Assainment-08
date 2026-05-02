@@ -1,10 +1,11 @@
+import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
 import React from 'react';
 
 const coursedetails = async ({ params }) => {
     let courses = [];
     try {
-        const res = await fetch('https://assainment-08.vercel.app/course.json');
+        const res = await fetch('https://data-fetching-sable-two.vercel.app/assainment-08.json');
         if (res.ok) {
             courses = await res.json();
         }
@@ -18,8 +19,11 @@ const coursedetails = async ({ params }) => {
 
 
 
+
+
     return (
         <div className='text-white grid grid-cols-[2fr_3fr] w-[90%] max-w-360 mx-auto p-12 gap-10'>
+
             <div className="left shadow-[0_0_2px_white] rounded-t-2xl rounded-b">
                 <div className="img rounded-t-2xl">
                     <Image className='rounded-t-2xl' src={sliceCourse.image} width={0} height={0} sizes='100vw' style={{ width: '100%', height: '100%' }} alt='Course Image'></Image>
@@ -69,6 +73,8 @@ const coursedetails = async ({ params }) => {
                     <h3 className='font-bold text-[1.125rem] text-[#8a8797]'>AI-assisted Smart Task Manager (Claude Code + Django + React)</h3>
                 </div>
             </div>
+
+
         </div>
     );
 };
