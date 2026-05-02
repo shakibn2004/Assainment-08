@@ -16,7 +16,7 @@ const SignInPage = () => {
         const { data, error } = await authClient.signIn.email({
             email: userData.email,
             password: userData.password,
-            callbackURL: "/home",
+            callbackURL: "/",
         });
         setErrorMsg(error.message);
     };
@@ -25,7 +25,11 @@ const SignInPage = () => {
     return (
         <div className='w-fit mx-auto'>
             {
-                isPending ? <h1 className='text-white text-5xl'>Loading....</h1> : (
+                isPending ? (
+                    <div className="flex min-h-screen items-center justify-center">
+                        <div className="loader"></div>
+                    </div>
+                ) : (
                     <Form
                         className="flex w-96 flex-col gap-4 py-10 px-8 rounded-2xl shadow-[0_0_2px_#f97316]"
                         render={(props) => <form {...props} data-custom="foo" />}

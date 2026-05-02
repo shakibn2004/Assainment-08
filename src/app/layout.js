@@ -13,9 +13,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`h-full antialiased dm-sans`}>
 
       <body className="min-h-full flex flex-col bg-black">
-        {children}
+        <main className="grow">
+          {children}
+        </main>
       </body>
-      
+
     </html>
   );
 }
