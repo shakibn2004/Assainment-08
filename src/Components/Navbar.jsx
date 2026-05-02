@@ -24,16 +24,18 @@ const Navbar = () => {
     return (
         <div className='bg-black sticky top-0 z-10'>
             <header className='flex justify-between max-w-360 w-[90%] mx-auto items-center py-4'>
-                <nav className={`nav-start font-black text-[1.35rem] space-x-2 ${syne.className}`}>
-                    <span className='text-white'>Skill</span>
-                    <span className='linear-color'>Sphere</span>
-                </nav>
+                <Link href={'/'}>
+                    <nav className={`nav-start font-black text-[1.35rem] space-x-2 ${syne.className}`}>
+                        <span className='text-white'>Skill</span>
+                        <span className='linear-color'>Sphere</span>
+                    </nav>
+                </Link>
 
                 <nav className='flex list-none font font gap-8 text-[#8a8799]'>
                     {links.map(link => (
                         <li key={link.name}>
                             <Link
-                                href={link.path === '/profile' ? (user ? '/profile' : '/auth/signin') : link.path}
+                                href={link.path}
                                 className={`font-medium ${pathname === link.path
                                     ? "text-white underline decoration-[#f97316] underline-offset-4 decoration-2"
                                     : "hover:text-white"

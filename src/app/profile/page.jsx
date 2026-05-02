@@ -1,10 +1,8 @@
 'use client'
 import { authClient } from '@/lib/auth-client';
-import { Button, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import { Syne } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FcGoogle } from 'react-icons/fc';
 import { RiLogoutCircleLine } from 'react-icons/ri';
 
 

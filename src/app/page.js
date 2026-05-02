@@ -2,9 +2,9 @@ import Footer from "@/Components/Footer";
 import Home from "@/Components/Home";
 import LearningTips from "@/Components/LearningTips";
 import Navbar from "@/Components/Navbar";
+import NewReleases from "@/Components/NewReleases";
 import PopularCourses from "@/Components/PopularCourses";
 import TopInstructor from "@/Components/TopInstructor";
-import { Toast } from "@heroui/react";
 
 
 export default function RootHome() {
@@ -16,6 +16,7 @@ export default function RootHome() {
         <PopularCourses />
         <LearningTips />
         <TopInstructor />
+        <NewReleases />
         <Footer />
       </main>
     </div>

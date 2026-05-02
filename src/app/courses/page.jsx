@@ -1,4 +1,5 @@
 
+import SearchCourse from "@/Components/SearchCourse";
 import { Syne } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +14,11 @@ const syne = Syne({
 })
 
 
-const Course = async () => {
+const Course = async ({ searchParams }) => {
+
+    const search = await searchParams;
+    const searchKeyword = search.search;
+
     let courses = [];
     try {
         const res = await fetch('https://data-fetching-sable-two.vercel.app/assainment-08.json');
@@ -22,6 +27,13 @@ const Course = async () => {
         }
     } catch (error) {
         console.error("Fetch error:", error);
+    }
+
+    let filteredCourses = courses;
+    if (searchKeyword) {
+        filteredCourses = courses.filter(course =>
+            course.title.toLowerCase().includes(searchKeyword.toLowerCase())
+        );
     }
 
 
@@ -35,14 +47,11 @@ const Course = async () => {
                 <p>Everything we offer — filter by search, explore by category.</p>
             </div>
 
-            <div className="search mt-6">
-                <input className="focus:outline-none border border-[#f97316]/70 py-2 px-3 rounded-xl" type="search" name="search" id="search" placeholder="Search course by title" />
-            </div>
-
+            <SearchCourse />
 
             <div className="cards grid grid-cols-4 gap-6 gap-y-15 mt-25">
                 {
-                    courses.map((course, idx) => {
+                    filteredCourses.map((course, idx) => {
                         const { id, rating, duration, title, instructor, category, level, image } = course;
 
                         return (
