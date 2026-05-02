@@ -3,13 +3,18 @@ import { authClient } from '@/lib/auth-client';
 import { Button, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import Link from 'next/link';
 import { useState } from 'react';
+import { Slide, toast } from 'react-toastify';
+import 'animate.css';
 
 const SignInPage = () => {
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
 
+    const [loading, setLoading] = useState();
+
     const [errorMsg, setErrorMsg] = useState()
     const onSubmit = async (e) => {
+        setLoading(true);
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const userData = Object.fromEntries(formData.entries());
@@ -17,6 +22,36 @@ const SignInPage = () => {
             email: userData.email,
             password: userData.password,
             callbackURL: "/",
+        }, {
+            onSuccess: () => {
+                setLoading(false);
+                toast.success('Signin successful!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Slide,
+                });
+            },
+            onError: (ctx) => {
+                setLoading(false);
+                toast.error(ctx.error.message, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Slide,
+                });
+                return
+            }
         });
         setErrorMsg(error.message);
     };
@@ -31,7 +66,7 @@ const SignInPage = () => {
                     </div>
                 ) : (
                     <Form
-                        className="flex w-96 flex-col gap-4 py-10 px-8 rounded-2xl shadow-[0_0_2px_#f97316]"
+                        className="flex w-96 flex-col gap-4 py-10 px-8 rounded-2xl shadow-[0_0_2px_#f97316] animate__animated animate__fadeInUp"
                         render={(props) => <form {...props} data-custom="foo" />}
                         onSubmit={onSubmit}
                     >

@@ -20,6 +20,7 @@ const Navbar = () => {
     const pathname = usePathname();
     const { data: session } = authClient.useSession();
     const user = session?.user;
+    console.log(user);
 
     return (
         <div className='bg-black sticky top-0 z-10'>
@@ -53,7 +54,7 @@ const Navbar = () => {
                         {user ? <h1 className={`linear-color font-bold ${syne.className}`}>Hello! {user.name}</h1> : ""}
                         <Link href={'/profile'} className={`${user ? 'block' : 'hidden'}`}>
                             <div className='w-10 h-10 rounded-full border-2 border-[#f97316] overflow-hidden'>
-                                <Image src={'/boy.png'} width={0} height={0} sizes='100vw' style={{ width: '100%', height: '100%' }} alt='User Avatar' />
+                                <Image src={`${user ? (user.image ? user.image : '/boy.png') : "/boy.png"}`} width={0} height={0} sizes='100vw' style={{ width: '100%', height: '100%' }} alt='User Avatar' />
                             </div>
                         </Link>
                         <div className="div">
@@ -77,3 +78,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+{/* <a href="https://ibb.co.com/9HRwwhTq"><img src="https://i.ibb.co.com/b5pHHFBr/Profissional-image.png" alt="Profissional-image" border="0"></a> */}

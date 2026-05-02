@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { FaArrowRightLong, FaStar } from "react-icons/fa6";
 import { MdOutlineTimer } from "react-icons/md";
+import 'animate.css';
 
 
 const syne = Syne({
@@ -55,11 +56,11 @@ const Course = async ({ searchParams }) => {
                         const { id, rating, duration, title, instructor, category, level, image } = course;
 
                         return (
-                            <div key={id} className="ccard border border-white/10 transition-all duration-900 hover:scale-102 hover:border hover:border-[#f97316]/60 pb-8 rounded-2xl shadow-[0_0_2px_#fff]/40">
+                            <div key={id} className="ccard animate__animated animate__fadeInRight border border-white/10 transition-all duration-900 hover:scale-102 hover:border hover:border-[#f97316]/60 pb-8 rounded-2xl shadow-[0_0_2px_#fff]/40">
 
                                 <div className="cbadge relative">
                                     <Image src={image} width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100%' }} alt={id} className="bg-amber-300/30 h-40 rounded-t-2xl"></Image>
-                                    <h1 className="text-white absolute -top-4 left-6 text-[14px] rounded-full px-3 py-1 bg-[#f97316] w-fit uppercase">{level}</h1>
+                                    <h1 className="text-white absolute -top-4 left-6 text-[14px] rounded-full px-3 py-1 bg-[#f97316] w-fit uppercase animate__animated animate__fadeInRight">{level}</h1>
                                 </div>
 
 

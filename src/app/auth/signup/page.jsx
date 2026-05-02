@@ -5,6 +5,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
+import { Slide, toast } from 'react-toastify';
+import 'animate.css';
+
 
 const SignUpPage = () => {
     const router = useRouter();
@@ -26,9 +29,32 @@ const SignUpPage = () => {
                 router.push("/auth/signin");
                 router.refresh();
                 setLoading(false);
+                toast.success('Signup successful!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Slide,
+                });
             },
             onError: (ctx) => {
-                alert(ctx.error.message);
+                setLoading(false);
+                toast.error(ctx.error.message, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Slide,
+                });
+                return
             }
         });
     };
@@ -49,10 +75,11 @@ const SignUpPage = () => {
                     </div>
                 ) : (
                     <Form
-                        className="flex w-96 flex-col gap-4 py-10 px-8 rounded-2xl shadow-[0_0_2px_#f97316]"
+                        className="flex w-96 flex-col gap-4 py-10 px-8 rounded-2xl shadow-[0_0_2px_#f97316] animate__animated animate__fadeInUp"
                         render={(props) => <form {...props} data-custom="foo" />}
                         onSubmit={onSubmit}
                     >
+
                         <TextField
                             isRequired
                             name="name"

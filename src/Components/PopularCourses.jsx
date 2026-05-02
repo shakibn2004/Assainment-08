@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { FaArrowRightLong, FaStar } from "react-icons/fa6";
 import { MdOutlineTimer } from "react-icons/md";
+import 'animate.css';
 
 
 const syne = Syne({
@@ -19,7 +20,7 @@ const PopularCourses = async () => {
     const coursesSlice = coursesSort.slice(0, 3)
 
     return (
-        <section className='text-white w-[90%] max-w-360 mx-auto space-y-4'>
+        <section className='text-white w-[90%] hero-start animate__animated animate__slideInLeft max-w-360 mx-auto space-y-4'>
             <div className="top">
                 <h1 className={`${syne.className} text-5xl font-black`}>Popular Courses</h1>
             </div>

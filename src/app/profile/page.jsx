@@ -4,6 +4,8 @@ import { Syne } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { RiLogoutCircleLine } from 'react-icons/ri';
+import 'animate.css';
+
 
 
 const syne = Syne({
@@ -15,8 +17,9 @@ const Profile = () => {
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
 
+
     return (
-        <section className='text-white w-[90%] max-w-360 mx-auto py-20 space-y-3'>
+        <section className='text-white animate__fadeInTopLeft animate__animated w-[90%] max-w-360 mx-auto py-20 space-y-3'>
 
 
 
@@ -33,8 +36,8 @@ const Profile = () => {
                         <div className='w-fit space-y-6 mt-13'>
 
                             <div className='profile-card-top flex items-center gap-6'>
-                                <div className='w-20 h-20 linear-bg rounded-full flex items-center justify-center'>
-                                    <Image src={'/boy.png'} width={0} height={0} sizes='100vw' style={{ width: '100%', height: '100%' }} alt='User Avatar' />
+                                <div className='w-20 h-20 linear-bg rounded-full flex overflow-hidden items-center justify-center'>
+                                    <Image src={`${user ? (user.image ? user.image : '/boy.png') : "/boy.png"}`} width={0} height={0} sizes='100vw' style={{ width: '100%', height: '100%' }} alt='User Avatar' />
                                 </div>
                             </div>
 

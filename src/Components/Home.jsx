@@ -2,6 +2,7 @@ import { Syne } from 'next/font/google';
 import React from 'react';
 import { FaPlay } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
+import 'animate.css';
 
 const syne = Syne({
     subsets: ['latin'],
@@ -12,7 +13,7 @@ const Home = () => {
     return (
         <section>
             <section className='w-[90%] max-w-360 mx-auto flex gap-4 justify-between items-center text-white py-20' >
-                <div className="hero-start space-y-10">
+                <div className="hero-start animate__animated animate__slideInLeft space-y-10">
                     <div className="batch uppercase border border-[#f97316]/50 w-fit px-4 py-2 rounded-full">
                         <h1 className='text-[#f97316] text-[14px]'>A Reliable Platform for Tech Skills</h1>
                     </div>
@@ -46,7 +47,7 @@ const Home = () => {
                 </div>
 
 
-                <div className="hero-end shadow-[0_0_2px_#8a8799] border-t-2 border-[#f97316] p-6 rounded-2xl">
+                <div className="hero-end animate__animated animate__slideInRight shadow-[0_0_2px_#8a8799] border-t-2 border-[#f97316] p-6 rounded-2xl">
                     <div className="image bg-1 w-90 h-40 rounded-xl flex items-center justify-center text-5xl">🖥️</div>
 
                     <div className="content hidden md:block mt-5 space-y-3">
