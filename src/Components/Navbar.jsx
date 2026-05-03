@@ -59,7 +59,7 @@ const Navbar = () => {
                     {links.map(link => (
                         <li key={link.name}>
                             <Link
-                                href={user ? link.path : (link.path === "/profile" ? "/auth/signin?redirect=/profile" : link.path)}
+                                href={user ? link.path : (link.path === "/profile" ? `/auth/signin?redirect=${encodeURIComponent("/profile")}` : link.path)}
                                 className={`font-medium ${pathname === link.path
                                     ? "text-white underline decoration-[#f97316] underline-offset-4 decoration-2"
                                     : "hover:text-white"
