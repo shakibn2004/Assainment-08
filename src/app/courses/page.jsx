@@ -7,6 +7,8 @@ import { FaStarHalfAlt } from "react-icons/fa";
 import { FaArrowRightLong, FaStar } from "react-icons/fa6";
 import { MdOutlineTimer } from "react-icons/md";
 import 'animate.css';
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 
 const syne = Syne({
@@ -16,7 +18,6 @@ const syne = Syne({
 
 
 const Course = async ({ searchParams }) => {
-
     const search = await searchParams;
     const searchKeyword = search.search;
 
@@ -36,6 +37,12 @@ const Course = async ({ searchParams }) => {
             course.title.toLowerCase().includes(searchKeyword.toLowerCase())
         );
     }
+
+    // Get user login status
+    const session = await auth.api.getSession({
+        headers: await headers()
+    });
+    const user = session?.user;
 
 
     return (
@@ -77,7 +84,7 @@ const Course = async ({ searchParams }) => {
                                         </h5>
                                         <p className="flex items-center text-[#8a8799]"><MdOutlineTimer />{duration}</p>
                                     </div>
-                                    <Link href={`/courses/${id}`} className="text-[#f97316] hover:text-[#f97316]/80 border border-[#f97316]/80 flex items-center gap-1.5 justify-center py-2 rounded-xl w-full">View Details<FaArrowRightLong /></Link>
+                                    <Link href={user ? `/courses/${id}` : `/auth/signin?redirect=${encodeURIComponent(`/courses/${id}`)}`} className="text-[#f97316] hover:text-[#f97316]/80 border border-[#f97316]/80 flex items-center gap-1.5 justify-center py-2 rounded-xl w-full">View Details<FaArrowRightLong /></Link>
                                 </div>
                             </div>
                         )

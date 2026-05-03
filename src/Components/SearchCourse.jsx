@@ -4,20 +4,12 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 const SearchCourse = () => {
     const router = useRouter();
-    // const searchParams = useSearchParams();
-    // const search = searchParams.get('search') || '';
-
     // get search value and push it to router
     const handleSearch = (e) => {
         e.preventDefault()
         const searchKey = e.target.value;
         router.push(`?search=${searchKey}`);
     }
-
-    // // Clear input field on focus
-    // const handleFocus = () => {
-    //     router.push(`/courses`);
-    // }
 
 
     return (

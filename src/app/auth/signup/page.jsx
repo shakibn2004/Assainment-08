@@ -84,15 +84,17 @@ const SignUpPage = () => {
                             isRequired
                             name="name"
                             type="text"
+                            className="w-full"
                         >
                             <Label className='text-[#8a8799]'>Name</Label>
-                            <Input placeholder="Enter your name here" />
+                            <Input className="w-full" placeholder="Enter your name here" />
                             <FieldError />
                         </TextField>
                         <TextField
                             isRequired
                             name="email"
                             type="email"
+                            className="w-full"
                             validate={(value) => {
                                 if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
                                     return "Please enter a valid email address";
@@ -102,7 +104,7 @@ const SignUpPage = () => {
                             }}
                         >
                             <Label className='text-[#8a8799]'>Email</Label>
-                            <Input placeholder="john@example.com" />
+                            <Input className="w-full" placeholder="john@example.com" />
                             <FieldError />
                         </TextField>
 
@@ -111,6 +113,7 @@ const SignUpPage = () => {
                             minLength={8}
                             name="password"
                             type="password"
+                            className="w-full"
                             validate={(value) => {
                                 if (value.length < 8) {
                                     return "Password must be at least 8 characters";
@@ -126,7 +129,7 @@ const SignUpPage = () => {
                             }}
                         >
                             <Label className='text-[#8a8799]'>Password</Label>
-                            <Input placeholder="Enter your password" />
+                            <Input className="w-full" placeholder="Enter your password" />
                             <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
                             <FieldError />
                         </TextField>

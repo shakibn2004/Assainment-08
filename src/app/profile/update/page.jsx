@@ -4,6 +4,7 @@ import { Button, Description, FieldError, Form, Input, Label, TextField } from '
 import Link from 'next/link';
 import React from 'react';
 import 'animate.css';
+import { Slide, toast } from 'react-toastify';
 
 
 const Update = () => {
@@ -20,7 +21,18 @@ const Update = () => {
             image: userData.image,
             name: userData.name,
         })
-
+        
+        toast.success('Profile Update successful!', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Slide,
+        });
     };
 
     return (

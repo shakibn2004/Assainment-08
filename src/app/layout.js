@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
             pauseOnFocusLoss
             draggable
             pauseOnHover
-            theme="light"
+            theme="dark"
             transition={Slide}
           />
           {children}

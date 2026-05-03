@@ -5,6 +5,8 @@ import { FaStarHalfAlt } from "react-icons/fa";
 import { FaArrowRightLong, FaStar } from "react-icons/fa6";
 import { MdOutlineTimer } from "react-icons/md";
 import 'animate.css';
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 
 const syne = Syne({
@@ -12,11 +14,17 @@ const syne = Syne({
     display: 'swap',
 })
 
+// Get user login status
+const session = await auth.api.getSession({
+    headers: await headers()
+});
+const user = session?.user;
+
 
 const PopularCourses = async () => {
     const coursesPromised = await fetch('https://assainment-08.vercel.app/course.json');
     const courses = await coursesPromised.json();
-    const coursesSort = courses.sort((a, b) => b.rating-a.rating);
+    const coursesSort = courses.sort((a, b) => b.rating - a.rating);
     const coursesSlice = coursesSort.slice(0, 3)
 
     return (
@@ -31,19 +39,19 @@ const PopularCourses = async () => {
             </div>
 
 
-            <div className="cards grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="cards mt-15 grid grid-cols-1 md:grid-cols-4 gap-4">
                 {
                     coursesSlice.map((course, idx) => {
-                        const {id, rating, duration, title, instructor, category, level, image} = course;
+                        const { id, rating, duration, title, instructor, category, level, image } = course;
 
                         return (
                             <div key={id} className="ccard hover:border hover:border-[#f97316]/60 pb-8 rounded-2xl shadow-[0_0_2px_#fff]/40">
-                                
-                                    <div className="cbadge relative">
-                                        <Image src={image} width={0} height={0} sizes="100vw" style={{width: '100%', height: '100%'}} alt={id} className="bg-amber-300/30 h-40 rounded-t-2xl"></Image>
-                                        <h1 className="text-white absolute -top-4 left-6 text-[14px] rounded-full px-3 py-1 bg-[#f97316] w-fit uppercase">{level}</h1>
-                                    </div>
-                                
+
+                                <div className="cbadge relative">
+                                    <Image src={image} width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100%' }} alt={id} className="bg-amber-300/30 h-40 rounded-t-2xl"></Image>
+                                    <h1 className="text-white absolute -top-4 left-6 text-[14px] rounded-full px-3 py-1 bg-[#f97316] w-fit uppercase">{level}</h1>
+                                </div>
+
 
                                 <div className="content mt-4 space-y-3 px-4">
                                     <h3 className="text-[#f97316]">{category}</h3>
@@ -58,7 +66,7 @@ const PopularCourses = async () => {
                                         </h5>
                                         <p className="flex items-center text-[#8a8799]"><MdOutlineTimer />{duration}</p>
                                     </div>
-                                    <Link href={`/courses/${id}`} className="text-[#f97316] border border-[#f97316]/80 flex items-center gap-1.5 justify-center py-2 rounded-xl w-full">View Details<FaArrowRightLong /></Link>
+                                    <Link href={user ? `/courses/${id}` : `/auth/signin?redirect=${encodeURIComponent(`/courses/${id}`)}`} className="text-[#f97316] border border-[#f97316]/80 flex items-center gap-1.5 justify-center py-2 rounded-xl w-full">View Details<FaArrowRightLong /></Link>
                                 </div>
                             </div>
                         )

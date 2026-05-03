@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Slide, toast } from 'react-toastify';
 import 'animate.css';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const SignInPage = () => {
     const { data: session, isPending } = authClient.useSession();
@@ -12,6 +13,14 @@ const SignInPage = () => {
 
 
     const [errorMsg, setErrorMsg] = useState()
+    // user redirect to the page where he come from after login successfully
+    const searchParams = useSearchParams();
+
+    const redirect = searchParams.get('redirect');
+
+    console.log(redirect);
+
+
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -19,11 +28,11 @@ const SignInPage = () => {
         const { data, error } = await authClient.signIn.email({
             email: userData.email,
             password: userData.password,
-            callbackURL: "/",
+            callbackURL: redirect || "/",
         }, {
             onSuccess: () => {
                 toast.success('Signin successful!', {
-                    position: "top-center",
+                    position: "bottom-center",
                     autoClose: 5000,
                     hideProgressBar: false,
                     closeOnClick: false,
@@ -35,7 +44,6 @@ const SignInPage = () => {
                 });
             },
             onError: (ctx) => {
-                // setLoading(false);
                 toast.error(ctx.error.message, {
                     position: "top-center",
                     autoClose: 5000,
@@ -52,6 +60,8 @@ const SignInPage = () => {
         });
         setErrorMsg(error.message);
     };
+
+
 
 
     return (
