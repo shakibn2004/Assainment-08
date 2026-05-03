@@ -10,16 +10,16 @@ const syne = Syne({
 
 const TopInstructor = () => {
     return (
-        <section className='text-white w-[90%] max-w-360 mx-auto py-20 space-y-3'>
+        <section className='text-white w-[90%] max-w-360 mx-auto py-15 md:py-20 space-y-3'>
             <div className="top">
-                <h1 className={`${syne.className} text-5xl font-black`}>Top Instructors</h1>
+                <h1 className={`${syne.className} text-[clamp(1.5rem,5vw,3rem)] font-black`}>Top Instructors</h1>
             </div>
 
             <div className="middle">
-                Learn from world-class professionals with years of real-world experience.
+                <p className='text-[#8a8797]'>Learn from world-class professionals with years of real-world experience.</p>
             </div>
 
-            <div className="bottom-cards mt-8 grid grid-cols-5 gap-4">
+            <div className="bottom-cards mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="card-1 flex flex-col items-center px-4 py-6 shadow-[0_0_2px_#fff]/50 border border-[#f97316]/20 hover:border hover:border-[#f97316]/50">
                     <div className="icon border-2 border-[#f97316] bg-[#f973163a] w-20 h-20 p-3 rounded-full grid place-content-center text-3xl">👨🏻‍💻</div>
                     <h4 className={`${syne.className} font-bold text-[1rem]`}>John Doe</h4>

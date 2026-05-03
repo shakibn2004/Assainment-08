@@ -17,7 +17,7 @@ export default function RootHome() {
         <LearningTips />
         <TopInstructor />
         <NewReleases />
-        <Footer />
+        <Footer /> 
       </main>
     </div>
   );

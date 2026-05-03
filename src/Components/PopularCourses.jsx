@@ -22,16 +22,16 @@ const PopularCourses = async () => {
     return (
         <section className='text-white w-[90%] hero-start animate__animated animate__slideInLeft max-w-360 mx-auto space-y-4'>
             <div className="top">
-                <h1 className={`${syne.className} text-5xl font-black`}>Popular Courses</h1>
+                <h1 className={`${syne.className} text-[clamp(1.5rem,5vw,3rem)] font-black`}>Popular Courses</h1>
             </div>
 
             <div className="middle flex justify-between text-[#8a8799]">
                 <p>Handpicked by our team based on student ratings and <br /> outcomes.</p>
-                <Link href={'/home/courses'} className="flex gap-2 items-center mt-10  btn-secondary">View All<FaArrowRightLong /></Link>
+                <Link href={'/courses'} className="flex gap-2 items-center mt-0 md:mt-8  btn-secondary">View All<FaArrowRightLong /></Link>
             </div>
 
 
-            <div className="cards grid grid-cols-4 gap-4">
+            <div className="cards grid grid-cols-1 md:grid-cols-4 gap-4">
                 {
                     coursesSlice.map((course, idx) => {
                         const {id, rating, duration, title, instructor, category, level, image} = course;

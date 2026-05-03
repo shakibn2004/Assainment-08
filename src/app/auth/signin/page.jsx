@@ -10,11 +10,9 @@ const SignInPage = () => {
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
 
-    const [loading, setLoading] = useState();
 
     const [errorMsg, setErrorMsg] = useState()
     const onSubmit = async (e) => {
-        setLoading(true);
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const userData = Object.fromEntries(formData.entries());
@@ -24,7 +22,6 @@ const SignInPage = () => {
             callbackURL: "/",
         }, {
             onSuccess: () => {
-                setLoading(false);
                 toast.success('Signin successful!', {
                     position: "top-center",
                     autoClose: 5000,
@@ -38,7 +35,7 @@ const SignInPage = () => {
                 });
             },
             onError: (ctx) => {
-                setLoading(false);
+                // setLoading(false);
                 toast.error(ctx.error.message, {
                     position: "top-center",
                     autoClose: 5000,

@@ -9,16 +9,16 @@ const syne = Syne({
 
 const LearningTips = () => {
     return (
-        <section className='text-white w-[90%] max-w-360 mx-auto py-20 space-y-3'>
+        <section className='text-white w-[90%] max-w-360 mx-auto pt-15 md:py-20 space-y-3'>
             <div className="top">
-                <h1 className={`${syne.className} text-5xl font-black`}>Learning Tips</h1>
+                <h1 className={`${syne.className} text-[clamp(1.5rem,5vw,3rem)] font-black`}>Learning Tips</h1>
             </div>
 
             <div className="middle">
-                Proven techniques to help you learn faster and retain more.
+                <p className='text-[#8a8797]'>Proven techniques to help you learn faster and retain more.</p>
             </div>
 
-            <div className="bottom-cards mt-4 grid grid-cols-5 gap-4">
+            <div className="bottom-cards mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                 <div className="card-b px-4 py-6 shadow-[0_0_2px_#fff]/50 border border-[#f97316]/20 hover:border hover:border-[#f97316]/50">
                     <div className="icon bg-[#f97316]/30 w-15 h-15 p-4 rounded-2xl text-center text-2xl">⏰</div>
                     <h4 className={`${syne.className} font-bold text-[1rem]`}>Pomodoro Technique</h4>

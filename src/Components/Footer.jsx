@@ -10,7 +10,7 @@ const syne = Syne({
 
 const Footer = () => {
     return (
-        <div className='grid grid-cols-[2fr_4fr] gap-10 w-[90%] max-w-360 mx-auto py-15'>
+        <div className='grid   md:grid-cols-[2fr_4fr] gap-10 w-[90%] max-w-360 mx-auto py-10 md:py-15'>
             <footer>
                 <nav className={`nav-start font-black text-[1.35rem] space-x-2 mt-5 ${syne.className}`}>
                     <span className='text-white'>Skill</span>
@@ -31,10 +31,9 @@ const Footer = () => {
                         <FaFacebookF />
                     </div>
                 </div>
-                <p className='text-[#8a8799] mt-40'>© 2024 SkillSphere. All rights reserved.</p>
             </footer>
 
-            <footer className="footer sm:footer-horizontal place-content-around text-neutral-content p-6">
+            <footer className="footer grid grid-cols-2 sm:grid-cols-3 place-content-around text-neutral-content md:p-6">
                 <nav>
                     <h6 className="footer-title">Platform</h6>
                     <a className="link link-hover">All Courses</a>
@@ -55,11 +54,14 @@ const Footer = () => {
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
                     <a className="link link-hover">Refund Policy</a>
-                    <h6 className="footer-title mt-8">Contact</h6>
+                </nav>
+                <nav>
+                    <h6 className="footer-title">Contact</h6>
                     <p className='text-[#8a8799]'>reachme@skillsphere.dev</p>
                     <p className='text-[#8a8799]'>+880 96387823541</p>
                 </nav>
             </footer>
+            <p className='text-[#8a8799]  md:mt-40'>© 2026 SkillSphere. All rights reserved.</p>
         </div>
     );
 };

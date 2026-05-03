@@ -39,9 +39,9 @@ const Course = async ({ searchParams }) => {
 
 
     return (
-        <section className='text-white w-[90%] max-w-360 mx-auto space-y-4 py-20'>
+        <section className='text-white w-[90%] max-w-360 mx-auto space-y-4 py-10 md:py-20'>
             <div className="top">
-                <h1 className={`${syne.className} text-5xl font-black`}>All Courses</h1>
+                <h1 className={`${syne.className} text-[clamp(2rem,5vw,4rem)] font-black`}>All Courses</h1>
             </div>
 
             <div className="middle flex justify-between text-[#8a8799]">
@@ -50,7 +50,7 @@ const Course = async ({ searchParams }) => {
 
             <SearchCourse />
 
-            <div className="cards grid grid-cols-4 gap-6 gap-y-15 mt-25">
+            <div className="cards grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-15 mt-20 md:mt-25">
                 {
                     filteredCourses.map((course, idx) => {
                         const { id, rating, duration, title, instructor, category, level, image } = course;
