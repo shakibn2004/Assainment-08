@@ -34,7 +34,7 @@ const coursedetails = async ({ params }) => {
         <div>
             {
                 user ? (
-                    <div className='text-white grid grid-cols-[2fr_3fr] w-[90%] max-w-360 mx-auto p-12 gap-10' >
+                    <div className='text-white grid md:grid-cols-[2fr_3fr] w-[90%] max-w-360 mx-auto p-4 md:p-12 gap-10' >
 
                         <div className="left animate__animated animate__fadeInUp shadow-[0_0_2px_white] rounded-t-2xl rounded-b">
                             <div className="img rounded-t-2xl">
@@ -49,8 +49,8 @@ const coursedetails = async ({ params }) => {
                                 <button className='px-4 py-2 rounded-xl w-full text-xl linear-bg mt-4'>Enrolled Now</button>
                                 <div className="content mt-8">
                                     <h1 className='text-[#d2d2d2] text-[1.2rem] font-bold'>What You Will get?</h1>
-                                    <ul className='flex gap-15 py-4 text-[#8a8797] text-[1.1rem]'>
-                                        <ul className=''>
+                                    <ul className='flex flex-col sm:flex-row md:flex-col xl:flex-row justify-between py-4 text-[#8a8797] text-[1.1rem]'>
+                                        <ul>
                                             <li className='flex items-center gap-1 leading-0.5'><span className='text-5xl leading-8'>·</span>2 days crash course</li>
                                             <li className='flex items-center gap-1 leading-0.5'><span className='text-5xl leading-8'>·</span>Expart guidline</li>
                                             <li className='flex items-center gap-1 leading-0.5'><span className='text-5xl leading-8'>·</span>Live class</li>
@@ -68,7 +68,7 @@ const coursedetails = async ({ params }) => {
                         </div>
 
                         <div className="right animate__animated animate__fadeInTopRight">
-                            <h1 className='text-4xl font-black'>AI based Web Development: <br /> Python with Claude Code</h1>
+                            <h1 className='text-[clamp(1rem,5vw,2rem)] font-black'>AI based Web Development: <br /> Python with Claude Code</h1>
                             <p className='text-[#8a8797] mt-6'>If you are a complete beginner and want to start web development with Python, then this 2-day Django + React + AI workshop is for you. In this workshop, you will learn how to build a backend using Python, how to create a frontend with React, and how to use AI to speed up development.
 
                                 You won’t become a pro in just 2 days, but you will gain a clear roadmap for building a complete web application. This can be the perfect starting point for your journey as a Python developer.</p>
@@ -90,7 +90,7 @@ const coursedetails = async ({ params }) => {
                     </div >
                 ) : (
                     <div className='flex flex-col items-center gap-4 py-20'>
-                        <p className='text-3xl font-bold linear-color'>Please login to show course details</p>
+                        <p className='text-3xl font-bold text-center linear-color'>Please login to show course details</p>
                         <Link className='btn-primary w-fit' href={'/auth/signin'}>Login</Link>
                     </div>
                 )

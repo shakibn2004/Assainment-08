@@ -55,7 +55,7 @@ const SignInPage = () => {
 
 
     return (
-        <div className='w-fit mx-auto'>
+        <div className='w-fit p-4 mx-auto'>
             {
                 isPending ? (
                     <div className="flex min-h-screen items-center justify-center">
@@ -63,7 +63,7 @@ const SignInPage = () => {
                     </div>
                 ) : (
                     <Form
-                        className="flex w-96 flex-col gap-4 py-10 px-8 rounded-2xl shadow-[0_0_2px_#f97316] animate__animated animate__fadeInUp"
+                        className="flex flex-col gap-4 py-10 px-8 rounded-2xl shadow-[0_0_2px_#f97316] animate__animated animate__fadeInUp"
                         render={(props) => <form {...props} data-custom="foo" />}
                         onSubmit={onSubmit}
                     >

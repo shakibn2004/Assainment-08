@@ -55,7 +55,7 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                     <a className="link link-hover">Refund Policy</a>
                 </nav>
-                <nav>
+                <nav className='col-start-1 sm:col-start-3'>
                     <h6 className="footer-title">Contact</h6>
                     <p className='text-[#8a8799]'>reachme@skillsphere.dev</p>
                     <p className='text-[#8a8799]'>+880 96387823541</p>

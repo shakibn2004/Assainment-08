@@ -92,7 +92,7 @@ const Navbar = () => {
 
 
                 {/* Mobile Menu */}
-                <div className={`fixed top-15 left-0 right-0 z-40 lg:hidden bg-black border-b border-accent/10 transition-all duration-300
+                <div className={`fixed top-15 left-0 right-0 pb-5 z-40 lg:hidden bg-black border-b border-accent/10 transition-all duration-300
                                         ${menuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
                     <div className="flex flex-col px-6 py-4 gap-1">
                         {links.map((link, idx) => (
@@ -106,7 +106,7 @@ const Navbar = () => {
                             user ? (
                                 <Link onClick={async () => { await authClient.signOut() }} href={'/auth/signin'} className='text-[#8a8799] border border-[#8a8799]/50 rounded-xl px-4 py-2 font-medium flex md:hidden gap-1 items-center justify-center'><RiLogoutCircleLine />Logout</Link>
                             ) : (
-                                <div className='flex md:hidden gap-4'>
+                                <div className='flex md:hidden mt-5 gap-4'>
                                     <Link href={'/auth/signin'} className='text-[#8a8799] border border-[#8a8799]/50 rounded-xl px-4 py-2 font-medium flex gap-1 items-center'>Login<RiLoginCircleLine /></Link>
                                     <Link href={'/auth/signup'} className='btn-primary'>Register</Link>
                                 </div>

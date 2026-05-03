@@ -28,9 +28,9 @@ const Update = () => {
             {
                 user ? (
 
-                    <div className='flex justify-center py-20 px-4 animate__fadeInDown animate__animated'>
+                    <div className='flex w-fit mx-auto justify-center py-20 px-4 animate__fadeInDown animate__animated'>
                         <Form
-                            className="flex w-96 flex-col space-y-5 gap-4 py-7 px-8 rounded-2xl shadow-[0_0_2px_#f97316]"
+                            className="flex flex-col space-y-5 gap-4 py-7 px-8 rounded-2xl shadow-[0_0_2px_#f97316]"
                             render={(props) => <form {...props} data-custom="foo" />}
                             onSubmit={onSubmit}
                         >

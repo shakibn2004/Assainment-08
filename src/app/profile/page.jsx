@@ -19,21 +19,21 @@ const Profile = () => {
 
 
     return (
-        <section className='text-white animate__fadeInTopLeft animate__animated w-[90%] max-w-360 mx-auto py-20 space-y-3'>
+        <section className='text-white animate__fadeInTopLeft animate__animated w-[90%] max-w-360 mx-auto py-10 md:py-20 space-y-3'>
 
 
 
             {user ? (
-                <div>
+                <div className=''>
                     <div className="top">
-                        <h1 className={`${syne.className} text-5xl font-black`}>My Profile</h1>
+                        <h1 className={`${syne.className} text-[clamp(1.5rem,5vw,3rem)] font-black`}>My Profile</h1>
                     </div>
 
                     <div className="middle text-[#8a8799]">
-                        View and manage your learning progress and account details.
+                        <p className='text-[#8a8797]'>View and manage your learning progress and account details.</p>
                     </div>
-                    <div className='grid grid-cols-2'>
-                        <div className='w-fit space-y-6 mt-13'>
+                    <div className='grid'>
+                        <div className='sm:w-fit space-y-6 mt-13'>
 
                             <div className='profile-card-top flex items-center gap-6'>
                                 <div className='w-20 h-20 linear-bg rounded-full flex overflow-hidden items-center justify-center'>
