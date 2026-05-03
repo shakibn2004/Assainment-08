@@ -29,7 +29,7 @@ const Home = () => {
 
                     <div className="buttons flex gap-3 w-fit mx-auto md:mx-0">
                         <Link href={'/courses'} className='btn-primary'>Explore Courses</Link>
-                        <Dialog />
+                        <button className='btn-secondary flex items-center gap-2'><FaPlay /> Watch Intro</button>
                     </div>
 
                     <div className={`${syne.className} grid grid-cols-3 w-fit mx-auto gap-4`}>

@@ -5,11 +5,14 @@ import Link from 'next/link';
 import React from 'react';
 import 'animate.css';
 import { Slide, toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 
 
 const Update = () => {
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
+
+    const router = useRouter();
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -17,22 +20,32 @@ const Update = () => {
         const formData = new FormData(e.currentTarget);
         const userData = Object.fromEntries(formData.entries());
 
-        await authClient.updateUser({
-            image: userData.image,
-            name: userData.name,
-        })
-        
-        toast.success('Profile Update successful!', {
-            position: "bottom-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Slide,
-        });
+        const handleUpdate = async () => {
+            try {
+                await authClient.updateUser({
+                    image: userData.image,
+                    name: userData.name,
+                });
+
+                router.push('/profile');
+                toast.success('Profile Update successful!', {
+                    position: "bottom-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Slide,
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        handleUpdate();
+
     };
 
     return (
