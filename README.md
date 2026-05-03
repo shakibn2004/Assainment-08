@@ -1,3 +1,4 @@
+<img width="1454" height="834" alt="Screenshot 2026-05-04 at 12 08 44 AM" src="https://github.com/user-attachments/assets/95f25309-5527-49a7-a97b-00b1444fe541" />
 # Project Name
 ### SkillSphere – Online Learning Platform
 <br>
