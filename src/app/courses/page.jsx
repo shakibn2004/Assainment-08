@@ -17,7 +17,15 @@ const syne = Syne({
 })
 
 
+
 const Course = async ({ searchParams }) => {
+    // Get user login status
+    const session = await auth.api.getSession({
+        headers: await headers()
+    });
+    const user = session?.user;
+
+    
     const search = await searchParams;
     const searchKeyword = search.search;
 
@@ -38,11 +46,6 @@ const Course = async ({ searchParams }) => {
         );
     }
 
-    // Get user login status
-    const session = await auth.api.getSession({
-        headers: await headers()
-    });
-    const user = session?.user;
 
 
     return (

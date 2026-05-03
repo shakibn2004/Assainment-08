@@ -14,18 +14,21 @@ const syne = Syne({
     display: 'swap',
 })
 
-// Get user login status
-const session = await auth.api.getSession({
-    headers: await headers()
-});
-const user = session?.user;
 
 
 const PopularCourses = async () => {
+    // Get user login status
+    const session = await auth.api.getSession({
+        headers: await headers()
+    });
+    const user = session?.user;
+    
+
     const coursesPromised = await fetch('https://assainment-08.vercel.app/course.json');
     const courses = await coursesPromised.json();
     const coursesSort = courses.sort((a, b) => b.rating - a.rating);
     const coursesSlice = coursesSort.slice(0, 3)
+
 
     return (
         <section className='text-white w-[90%] hero-start animate__animated animate__slideInLeft max-w-360 mx-auto space-y-4'>
