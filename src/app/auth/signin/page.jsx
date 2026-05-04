@@ -77,6 +77,7 @@ const SignInPage = () => {
                         render={(props) => <form {...props} data-custom="foo" />}
                         onSubmit={onSubmit}
                     >
+                        <h1 className='text-3xl font-bold text-center text-white'>Login</h1>
                         <TextField
                             isRequired
                             name="email"

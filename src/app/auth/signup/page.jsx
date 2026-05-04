@@ -23,6 +23,8 @@ const SignUpPage = () => {
             email: userData.email,
             password: userData.password,
             name: userData.name,
+            image: userData.image,
+            last_name: userData.password,
             callbackURL: "/auth/signin",
         }, {
             onSuccess: () => {
@@ -79,7 +81,7 @@ const SignUpPage = () => {
                         render={(props) => <form {...props} data-custom="foo" />}
                         onSubmit={onSubmit}
                     >
-
+                        <h1 className='text-3xl font-bold text-center text-white'>Sign Up</h1>
                         <TextField
                             isRequired
                             name="name"
@@ -88,6 +90,16 @@ const SignUpPage = () => {
                         >
                             <Label className='text-[#8a8799]'>Name</Label>
                             <Input className="w-full" placeholder="Enter your name here" />
+                            <FieldError />
+                        </TextField>
+                        <TextField
+                            isRequired
+                            name="image"
+                            type="url"
+                            className="w-full"
+                        >
+                            <Label className='text-[#8a8799]'>Image Link</Label>
+                            <Input className="w-full" placeholder="Enter your image bb link here" />
                             <FieldError />
                         </TextField>
                         <TextField
