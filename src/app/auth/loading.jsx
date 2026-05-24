@@ -2,7 +2,7 @@
 const loading = () => {
     return (
         <div className="flex min-h-screen">
-            <div className="loader"></div>
+            <span className="loader"></span>
         </div>
     );
 };

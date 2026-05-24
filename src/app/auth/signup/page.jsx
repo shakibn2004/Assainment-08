@@ -93,7 +93,6 @@ const SignUpPage = () => {
                             <FieldError />
                         </TextField>
                         <TextField
-                            isRequired
                             name="image"
                             type="url"
                             className="w-full"
