@@ -1,4 +1,5 @@
 import { Bounce, Slide, ToastContainer } from "react-toastify";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           />
           {children}
         </main>
+        <Analytics />
       </body>
 
     </html>
